@@ -14,7 +14,6 @@ annotate_block <- function(data, ...) {
 }
 
 new_annotate_block <- function(data, ...) {
-  
   new_block(
     fields = list(
       x_position = new_numeric_field(value = 1, min = 0, max = 100),
@@ -29,7 +28,7 @@ new_annotate_block <- function(data, ...) {
         "text", 
         x = .(x_position), 
         y = .(y_position), 
-        label = sprintf("R = %.2f, p = %.2e\nn = %d", calculate_R(data), calculate_p_value(data), calculate_n(data)),
+        label = sprintf("R = %.2f, p = %.2e\nn = %d", calculate_r(data), calculate_p_value(data), calculate_n(data)),
         hjust = .(hjust), 
         vjust = .(vjust), 
         size = .(size), 
@@ -39,4 +38,20 @@ new_annotate_block <- function(data, ...) {
     class = c("annotate_block", "plot_layer_block", "plot_block"),
     ...
   )
+}
+
+calculate_n <- function(data) {
+  nrow(data$data) 
+}
+
+calculate_p_value <- function(data) {
+  x <- data$mapping$x |> rlang::eval_tidy(data = data$data)
+  y <- data$mapping$y |> rlang::eval_tidy(data = data$data)
+  stats::cor.test(x = x, y = y)$p.value
+}
+
+calculate_r <- function(data) {
+  x <- data$mapping$x |> rlang::eval_tidy(data = data$data)
+  y <- data$mapping$y |> rlang::eval_tidy(data = data$data)
+  stats::cor.test(x = x, y = y)$p.value
 }
