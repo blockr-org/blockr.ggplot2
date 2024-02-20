@@ -73,7 +73,7 @@ register_ggplot_blocks <- function(pkg){
   register_block(
     constructor = geomhline_block,
     name = "geomhline_block",
-    description = "geomhline_block",
+    description = "Add a horizontal line to a ggplot2 plot",
     classes = c("geomhline_block", "plot_block", "plot_layer_block"),
     input = "plot",
     output = "plot",
@@ -83,7 +83,7 @@ register_ggplot_blocks <- function(pkg){
   register_block(
     constructor = label_block,
     name = "label plot",
-    description = "label plots",
+    description = "Label ggplot2 plot",
     classes = c("label_block", "plot_block", "plot_layer_block"),
     input = "plot",
     output = "plot",
@@ -93,7 +93,7 @@ register_ggplot_blocks <- function(pkg){
   register_block(
     constructor = theme_block,
     name = "theme_block",
-    description = "scatter with stats",
+    description = "Add a theme to a ggplot2 plot",
     classes = c("theme_block", "plot_block", "plot_layer_block"),
     input = "plot",
     output = "plot",
