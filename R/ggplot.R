@@ -6,7 +6,7 @@
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block new_select_field new_list_field
-#' @importFrom ggplot2 ggplot aes
+#' @importFrom ggplot2 ggplot aes_string
 #' 
 #' @export
 ggplot_block <- function(data, ...) {
@@ -27,7 +27,7 @@ new_ggplot_block <- function(data, ...){
     expr = quote({
       ggplot(
         data = data,
-        mapping = aes(
+        mapping = aes_string(
           x = .(x),
           y = .(y)
         )
