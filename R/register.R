@@ -9,7 +9,15 @@ register_ggplot_blocks <- function(pkg){
     output = "plot",
     package = pkg
   )
-
+  register_block(
+    constructor = geomhistogram_block,
+    name = "geomhistogram",
+    description = "Ggplot2 histogram plot",
+    classes = c("geomhistogram_block", "plot_block", "plot_layer_block"),
+    input = "plot",
+    output = "plot",
+    package = pkg
+  )
   register_block(
     constructor = geompoint_block,
     name = "geompoint",
