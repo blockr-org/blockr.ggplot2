@@ -28,6 +28,7 @@ register_ggplot_blocks <- function(pkg){
     package = pkg
   )
   
+  
   register_block(
     constructor = facet_block,
     name = "facet",
@@ -38,6 +39,15 @@ register_ggplot_blocks <- function(pkg){
     package = pkg
   )
 
+  register_block(
+    constructor = geombar_block,
+    name = "geombar",
+    description = "Ggplot2 geom bar plot",
+    classes = c("geombar_block", "plot_block", "plot_layer_block"),
+    input = "plot",
+    output = "plot",
+    package = pkg
+  )
   register_block(
     constructor = geomline_block,
     name = "geomline",
