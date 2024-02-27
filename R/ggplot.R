@@ -14,19 +14,20 @@ ggplot_block <- function(data, ...) {
 }
 
 new_ggplot_block <- function(
-    data,
-    func = c("x"),
-    default_columns = character(),
-    ...) {
+  data,
+  func = c("x"),
+  default_columns = character(),
+  ...
+) {
   if (length(default_columns) > 0) {
     stopifnot(length(func) == length(default_columns))
   }
   
   # Columns are only a select input
-  sub_fields <- function(data, funcs) {
+  sub_fields <- function(data, axes) {
     all_cols <- colnames(data)
     tmp_selects <- lapply(
-      seq_along(funcs),
+      seq_along(axes),
       function(i) {
         default <- if (length(default_columns) > 0) {
           default_columns[[i]]
@@ -37,20 +38,20 @@ new_ggplot_block <- function(
         new_select_field(value = default, choices = all_cols)
       }
     )
-    names(tmp_selects) <- funcs
+    names(tmp_selects) <- axes
     tmp_selects
   }
   
-  ggplot_expr <- function(data, funcs, columns) {
+  ggplot_expr <- function(data, axes, columns) {
     # Build expressions that will go inside the ggplot
-    if (length(funcs) == 0) {
+    if (length(axes) == 0) {
       return(quote(TRUE))
     }
     if (length(columns) == 0) {
       return(quote(TRUE))
     }
     
-    tmp_exprs <- lapply(funcs, function(fun) {
+    tmp_exprs <- lapply(axes, function(fun) {
       col <- columns[[fun]]
       
       if (is.null(col)) {
@@ -85,7 +86,7 @@ new_ggplot_block <- function(
   )
   
   fields <- list(
-    funcs = new_select_field(func, func_choices, multiple = TRUE),
+    axes = new_select_field(func, func_choices, multiple = TRUE),
     columns = new_list_field(sub_fields = sub_fields),
     expression = new_hidden_field(ggplot_expr)
   )
