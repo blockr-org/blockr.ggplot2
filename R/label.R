@@ -21,7 +21,7 @@ new_label_block <- function(data, ...) {
       title = new_string_field("")
     ),
     expr = quote(
-      labs(x = .(xlab), y = .(ylab), title = .(title))
+      ggplot2::labs(x = .(xlab), y = .(ylab), title = .(title))
     ),
     class = c("label_block", "plot_layer_block", "plot_block"),
     ...

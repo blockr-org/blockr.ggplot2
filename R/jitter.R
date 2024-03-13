@@ -19,7 +19,7 @@ new_geomjitter_block <- function(data, ...) {
       width = new_numeric_field(0.45, min = 0, max = 1)
     ),
     expr = quote(
-      geom_jitter(width = .(width))
+      ggplot2::geom_jitter(width = .(width))
     ),
     class = c("geomjitter_block", "plot_layer_block", "plot_block"),
     ...

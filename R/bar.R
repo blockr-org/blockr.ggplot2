@@ -17,7 +17,7 @@ new_geombar_block <- function(data, ...) {
   new_block(
     fields = list(),
     expr = quote(
-      geom_bar(stat="identity")
+      ggplot2::geom_bar(stat = "identity")
     ),
     class = c("geombar_block", "plot_layer_block", "plot_block"),
     ...

@@ -5,7 +5,7 @@
 #' @param data Data to be plotted.
 #' @param ... Passed to [blockr::new_block()].
 #' 
-#' @importFrom blockr new_block new_select_field new_list_field
+#' @importFrom blockr new_block new_select_field new_list_field new_hidden_field
 #' @importFrom ggplot2 ggplot aes
 #' 
 #' @export
@@ -14,10 +14,11 @@ ggplot_block <- function(data, ...) {
 }
 
 new_ggplot_block <- function(
-    data,
-    func = c("x"),
-    default_columns = character(),
-    ...) {
+  data,
+  func = c("x"),
+  default_columns = character(),
+  ...
+) {
   if (length(default_columns) > 0) {
     stopifnot(length(func) == length(default_columns))
   }

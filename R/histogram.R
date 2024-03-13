@@ -17,7 +17,7 @@ new_geomhistogram_block <- function(data, ...) {
   new_block(
     fields = list(),
     expr = quote(
-      geom_histogram()
+      ggplot2::geom_histogram()
     ),
     class = c("geomhistogram_block", "plot_layer_block", "plot_block"),
     ...

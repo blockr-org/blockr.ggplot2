@@ -17,7 +17,7 @@ new_geomboxplot_block <- function(data, ...) {
   new_block(
     fields = list(),
     expr = quote(
-      geom_boxplot()
+      ggplot2::geom_boxplot()
     ),
     class = c("geomboxplot_block", "plot_layer_block", "plot_block"),
     ...

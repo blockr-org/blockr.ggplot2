@@ -24,7 +24,7 @@ new_facet_block <- function(data, ...) {
 
   new_block(
     expr = quote(
-      facet_wrap(facets = .(facet_var))
+      ggplot2::facet_wrap(facets = .(facet_var))
     ),
     fields = list(
       facet_var = new_select_field(sel_cols_1, sel_cols)

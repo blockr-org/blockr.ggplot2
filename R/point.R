@@ -17,7 +17,7 @@ new_geompoint_block <- function(data, ...) {
   new_block(
     fields = list(),
     expr = quote(
-      geom_point()
+      ggplot2::geom_point()
     ),
     class = c("geompoint_block", "plot_layer_block", "plot_block"),
     ...

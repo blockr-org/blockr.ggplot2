@@ -24,7 +24,7 @@ new_annotate_block <- function(data, ...) {
       color = new_string_field("red")
     ),
     expr = quote(
-      annotate(
+      ggplot2::annotate(
         "text", 
         x = .(x_position), 
         y = .(y_position), 

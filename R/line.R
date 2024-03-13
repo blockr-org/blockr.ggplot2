@@ -17,7 +17,7 @@ new_geomline_block <- function(data, ...) {
   new_block(
     fields = list(),
     expr = quote(
-      geom_line()
+      ggplot2::geom_line()
     ),
     class = c("geomline_block", "plot_layer_block", "plot_block"),
     ...
@@ -52,7 +52,7 @@ new_geomhline_block <- function(data, ...) {
       )
     ),
     expr = quote(
-      geom_hline(yintercept = .(yintercept), linetype = .(linetype))
+      ggplot2::geom_hline(yintercept = .(yintercept), linetype = .(linetype))
     ),
     class = c("geomhline_block", "plot_layer_block", "plot_block"),
     ...
@@ -75,7 +75,7 @@ new_geomvline_block <- function(data, ...) {
       )
     ),
     expr = quote(
-      geom_vline(xintercept = .(xintercept), linetype = .(linetype))
+      ggplot2::geom_vline(xintercept = .(xintercept), linetype = .(linetype))
     ),
     class = c("geomvline_block", "plot_layer_block", "plot_block"),
     ...
