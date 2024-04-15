@@ -28,7 +28,6 @@ register_ggplot_blocks <- function(pkg){
     package = pkg
   )
   
-  
   register_block(
     constructor = facet_block,
     name = "facet",

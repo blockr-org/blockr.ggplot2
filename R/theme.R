@@ -18,7 +18,8 @@ new_theme_block <- function(data, ...) {
     fields = list(
       theme = new_select_field(
         "theme_minimal", 
-        grep("^theme_.*$", ls("package:ggplot2"), perl = TRUE, value = TRUE),
+        grep("^theme_.*$", ls("package:ggplot2"), perl = TRUE, value = TRUE) |>
+          (\(x){x[!x %in% c("theme_set", "theme_get", "theme_update", "theme_test")]})(),
         type = "name"
       )
     ),
