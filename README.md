@@ -19,19 +19,10 @@ library(blockr)
 library(blockr.ggplot2)
 
 stack <- new_stack(
-    data_block,
-    ggplot_block,
-    geompoint_block
+    new_dataset_block(selected = "BOD"),
+    new_ggplot_block(func = c("x", "y"), default_columns = c("Time", "demand")),
+    new_geompoint_block
 )
 
-ui <- fluidPage(
-    theme = bslib::bs_theme(5L),
-    generate_ui(stack)
-)
-
-server <- function(...){
-    generate_server(stack)
-}
-
-shinyApp(ui, server)
+serve_stack(stack)
 ```

@@ -2,17 +2,15 @@
 % Please edit documentation in R/line.R
 \name{hvline}
 \alias{hvline}
-\alias{geomhline_block}
-\alias{geomvline_block}
+\alias{new_geomhline_block}
+\alias{new_geomvline_block}
 \title{Horinzontal and Vertical Lines block}
 \usage{
-geomhline_block(data, ...)
+new_geomhline_block(...)
 
-geomvline_block(data, ...)
+new_geomvline_block(...)
 }
 \arguments{
-\item{data}{Data to be plotted.}
-
 \item{...}{Passed to \code{\link[blockr:new_block]{blockr::new_block()}}.}
 }
 \description{

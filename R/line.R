@@ -2,18 +2,13 @@
 #' 
 #' Add points to a ggplot2 object.
 #' 
-#' @param data Data to be plotted.
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block
 #' @importFrom ggplot2 geom_line
 #' 
 #' @export
-geomline_block <- function(data, ...) {
-  initialize_block(new_geomline_block(data, ...), data)
-}
-
-new_geomline_block <- function(data, ...) {
+new_geomline_block <- function(...) {
   new_block(
     fields = list(),
     expr = quote(
@@ -28,7 +23,6 @@ new_geomline_block <- function(data, ...) {
 #' 
 #' Add lines to a ggplot2 object.
 #' 
-#' @param data Data to be plotted.
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block
@@ -37,11 +31,7 @@ new_geomline_block <- function(data, ...) {
 #' @name hvline
 #' 
 #' @export
-geomhline_block <- function(data, ...) {
-  initialize_block(new_geomhline_block(data, ...), data)
-}
-
-new_geomhline_block <- function(data, ...) {
+new_geomhline_block <- function(...) {
   
   new_block(
     fields = list(
@@ -61,11 +51,7 @@ new_geomhline_block <- function(data, ...) {
 
 #' @rdname hvline
 #' @export
-geomvline_block <- function(data, ...) {
-  initialize_block(new_geomvline_block(data, ...), data)
-}
-
-new_geomvline_block <- function(data, ...) {
+new_geomvline_block <- function(...) {
   new_block(
     fields = list(
       xintercept = new_numeric_field(value = c(10, 20), min = 0, max = 1000),

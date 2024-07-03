@@ -1,15 +1,14 @@
 #' Smooth block
 #' 
 #' Fit a line to a ggplot2 object.
-#' 
-#' @param data Data to be plotted.
+#'
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block new_switch_field
 #' @importFrom ggplot2 geom_smooth
 #' 
 #' @export
-new_geomsmooth_block <- function(data, ...) {
+new_geomsmooth_block <- function(...) {
   new_block(
     fields = list(
       color = new_string_field("red"),
@@ -22,8 +21,4 @@ new_geomsmooth_block <- function(data, ...) {
     class = c("geomsmooth_block", "plot_layer_block", "plot_block"),
     ...
   )
-}
-
-geomsmooth_block <- function(data, ...) {
-  initialize_block(new_geomsmooth_block(data, ...), data)
 }

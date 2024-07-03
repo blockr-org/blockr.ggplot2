@@ -4,11 +4,9 @@
 \alias{new_geomsmooth_block}
 \title{Smooth block}
 \usage{
-new_geomsmooth_block(data, ...)
+new_geomsmooth_block(...)
 }
 \arguments{
-\item{data}{Data to be plotted.}
-
 \item{...}{Passed to \code{\link[blockr:new_block]{blockr::new_block()}}.}
 }
 \description{
