@@ -6,6 +6,10 @@ Authors@R:
              family = "Coene",
              role = c("cre", "aut"),
              email = "john@opifex.org"),
+             person(given = "David",
+             family = "Granjon",
+             role = c("ctb"),
+             email = "david@cynkra.com"),
       person(family = "Bristol Myers Squibb",
            role = c("cph", "fnd"))
     )

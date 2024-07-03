@@ -1,22 +1,17 @@
 #' GGplot block
 #' 
 #' Ggplot block.
-#' 
-#' @param data Data to be plotted.
+#'
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block new_select_field new_list_field new_hidden_field
 #' @importFrom ggplot2 ggplot aes
 #' 
 #' @export
-ggplot_block <- function(data, ...) {
-  initialize_block(new_ggplot_block(data, ...), data)
-}
-
 new_ggplot_block <- function(
-  data,
   func = c("x"),
   default_columns = character(),
+  submit = FALSE,
   ...
 ) {
   if (length(default_columns) > 0) {
@@ -95,6 +90,6 @@ new_ggplot_block <- function(
     fields = fields,
     expr = quote(.(expression)),
     ...,
-    class = c("ggplot_block", "plot_block", "submit_block")
+    class = c("ggplot_block", "plot_block", if (submit) "submit_block")
   )
 }

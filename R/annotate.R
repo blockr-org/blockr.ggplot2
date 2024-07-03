@@ -2,18 +2,13 @@
 #' 
 #' Annotate block for ggplot2.
 #' 
-#' @param data Data to be plotted.
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr initialize_block new_block new_numeric_field new_string_field
 #' @importFrom ggplot2 annotate
 #' 
 #' @export
-annotate_block <- function(data, ...) {
-  initialize_block(new_annotate_block(data, ...), data)
-}
-
-new_annotate_block <- function(data, ...) {
+new_annotate_block <- function(...) {
   new_block(
     fields = list(
       x_position = new_numeric_field(value = 1, min = 0, max = 100),
