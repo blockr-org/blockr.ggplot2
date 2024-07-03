@@ -1,7 +1,11 @@
 #' GGplot block
 #' 
 #' Ggplot block.
-#'
+#' 
+#' @param func Passed to ggplot2 aesthetics.
+#' @param default_columns Default selected columns from func.
+#' @param submit Whether to show a submit button before showing the plot.
+#' Default to FALSE.
 #' @param ... Passed to [blockr::new_block()].
 #' 
 #' @importFrom blockr new_block new_select_field new_list_field new_hidden_field

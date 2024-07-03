@@ -12,6 +12,13 @@ new_ggplot_block(
 )
 }
 \arguments{
+\item{func}{Passed to ggplot2 aesthetics.}
+
+\item{default_columns}{Default selected columns from func.}
+
+\item{submit}{Whether to show a submit button before showing the plot.
+Default to FALSE.}
+
 \item{...}{Passed to \code{\link[blockr:new_block]{blockr::new_block()}}.}
 }
 \description{
