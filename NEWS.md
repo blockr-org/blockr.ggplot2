@@ -4,7 +4,7 @@
 - Updated readme example with new API.
 
 ## Minor changes
-- Added `submit` param (bookean) to `new_ggplot_block` to control the submit button activation. Default to FALSE.
+- Added `submit` param (boolean) to `new_ggplot_block` to control the submit button activation. Default to FALSE.
 
 ## Breaking changes
 - Change blocks constructor names to `new_*_block` according to `{blockr}` 0.0.2.
